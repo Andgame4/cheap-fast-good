@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Dinh kieu cho ca thanh phan anh */
+      .container {
+        width: 500px;
+      }
+      img {
+        width: 500px;
+        height: 150px;
+      }
+      .correct {
+        box-shadow: 0 0 15px 5px #29ff21;
+      }
+      .incorrect {
+        box-shadow: 0 0 15px 5px #ff1030;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Thiet ke giao dien cho bai toan -->
+    <div class="container">
+      <div class="incorrect">
+        <img id="img1" src="/img/topUser.jpg" alt="" onclick="handelImg1()" />
+      </div>
+      <div class="incorrect">
+        <img id="img2" src="/img/midCat.jpg" alt="" onclick="handelImg2()" />
+      </div>
+      <div class="incorrect">
+        <img id="img3" src="/img/botBook.jpg" alt="" onclick="handelImg3()" />
+      </div>
+    </div>
+    <script>
+      // Xac dinh cac gia tri duong dan anh
+      const top1 = "/img/topUser.jpg";
+      const top2 = "/img/topCat.jpg";
+      const top3 = "/img/topBook.jpg";
+
+      const mid1 = "/img/midUser.jpg";
+      const mid2 = "/img/midCat.jpg";
+      const mid3 = "/img/midBook.jpg";
+
+      const bot1 = "/img/botUser.jpg";
+      const bot2 = "/img/botCat.jpg";
+      const bot3 = "/img/botBook.jpg";
+
+      // Xac dinh vi tri mac dinh cua anh
+      var position1 = 1;
+      var position2 = 2;
+      var position3 = 3;
+
+      // Xu ly moi khi click vao anh
+      function handelImg1() {
+        // Lay ra selector tuong ung
+        var sel = document.getElementById("img1");
+        // Kiem tra vi tri anh hien tai
+        if (position1 == 1) {
+          position1++; // Cat
+          sel.src = top2;
+        } else if (position1 == 2) {
+          position1++; // Book
+          sel.src = top3;
+        } else if (position1 == 3) {
+          position1 = 1; // User
+          sel.src = top1;
+        }
+
+        // kiểm tra vị trí của các position
+        if (position1 == position2 && position2 == position3) {
+          // neu vi tri 3 anh trung khop
+          // thi chuyen nen cua cac anh sang mau xanh (them class correct)
+          document.getElementById("img1").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+          document.getElementById("img2").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+          document.getElementById("img3").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+        } else {
+          // neu vi tri 3 anh khong trung khop
+          //thi chuyen nen cac anh sang mau do (them class incorrect)
+          document.getElementById("img1").style.boxShadow = "0 0 15px 5px red";
+          document.getElementById("img2").style.boxShadow = "0 0 15px 5px red";
+          document.getElementById("img3").style.boxShadow = "0 0 15px 5px red";
+        }
+      }
+      // Xu ly moi khi click vao anh 2
+      function handelImg2() {
+        // Lay ra selector tuong ung
+        var sel = document.getElementById("img2");
+        console.log(position2);
+
+        // Kiem tra vi tri anh hien tai anh 2
+        if (position2 == 1) {
+          position2++; // cat
+          sel.src = mid2;
+        } else if (position2 == 2) {
+          position2++; // book
+          sel.src = mid3;
+        } else if (position2 == 3) {
+          position2 = 1; // user
+          sel.src = mid1;
+        }
+        // kiểm tra vị trí của các position
+        if (position1 == position2 && position2 == position3) {
+          // neu vi tri 3 anh trung khop
+          // thi chuyen nen cua cac anh sang mau xanh (them class correct)
+          document.getElementById("img1").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+          document.getElementById("img2").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+          document.getElementById("img3").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+        } else {
+          // neu vi tri 3 anh khong trung khop
+          //thi chuyen nen cac anh sang mau do (them class incorrect)
+          document.getElementById("img1").style.boxShadow = "0 0 15px 5px red";
+          document.getElementById("img2").style.boxShadow = "0 0 15px 5px red";
+          document.getElementById("img3").style.boxShadow = "0 0 15px 5px red";
+        }
+      }
+
+      function handelImg3() {
+        // Lay ra selector tuong ung
+        var sel = document.getElementById("img3");
+        console.log(position3);
+
+        // Kiem tra vi tri anh hien tai anh 2
+        if (position3 == 1) {
+          position3++; // cat
+          sel.src = bot2;
+        } else if (position3 == 2) {
+          position3++; // book
+          sel.src = bot3;
+        } else if (position3 == 3) {
+          position3 = 1; // user
+          sel.src = bot1;
+        }
+        // kiểm tra vị trí của các position
+        if (position1 == position2 && position2 == position3) {
+          // neu vi tri 3 anh trung khop
+          // thi chuyen nen cua cac anh sang mau xanh (them class correct)
+          document.getElementById("img1").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+          document.getElementById("img2").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+          document.getElementById("img3").style.boxShadow =
+            "0 0 15px 5px #29ff21";
+        } else {
+          // neu vi tri 3 anh khong trung khop
+          //thi chuyen nen cac anh sang mau do (them class incorrect)
+          document.getElementById("img1").style.boxShadow = "0 0 15px 5px red";
+          document.getElementById("img2").style.boxShadow = "0 0 15px 5px red";
+          document.getElementById("img3").style.boxShadow = "0 0 15px 5px red";
+        }
+      }
+    </script>
+  </body>
+</html>
